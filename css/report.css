@@ -227,7 +227,7 @@ img {
     max-width: 100%;
     display: block;
 }
-
+.page_0 .title{border:0 !important}
 .page_0 .caution_box{position: absolute; border:1px solid tomato; padding:4px 10px; color:tomato; line-height: 1; top:0; left:0;}
 .page_0 .title_box{font-size: 43px; text-align: center;height: 16cm;  display: flex; justify-content: center; align-items: center;}
 .page_0 .content{padding: 30px;border:1px solid silver;position: absolute;bottom:0;left:0;width: 100%;}
