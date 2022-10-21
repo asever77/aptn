@@ -86,8 +86,8 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     position: relative;
 }
-.page > .line{position: absolute; width:100%; height: 20px; background-color: rgb(32, 104, 237); top:0; left:0;}
-
+.page > .line{position: absolute;width:100%;height: 20px;background-color: rgb(86 96 113);top:0;left:0;}
+.page_wide > .line{position: absolute;width:100%;height: 20px;background-color: rgb(86 96 113);top:0;left:0;}
 .subpage {
     padding: 0;
     height: 257mm;
@@ -96,22 +96,22 @@ body {
 
 .page_wide {
     /*transform:rotate(90deg)*/
+    position: relative;
     width: 297.7mm;
     min-height: 210mm;
-    padding: 20mm;
+    padding: 10mm;
     margin: 10mm auto;
     border: 1px #D3D3D3 solid;
-    border-radius: 5px;
+    border-radius: 0;
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .subpage_wide {
-    padding: 1cm;
-    border: 1px #2a2a2a solid;
-    width: 257mm;
-    height: 170mm;
-    outline: 2cm #ffffff solid;
+    position: relative;
+    padding: 0;
+    width: 277mm;
+    height: 180mm;
 }
 
 @page {
@@ -234,18 +234,36 @@ img {
 .page_0 .title_date_0{text-align: center;}
 .page_0 .office{text-align: center;}
 
-.page_1 .title{padding: 1cm 0 0.1cm;border-bottom: 3px solid #eaeaea;margin-bottom: .1cm;}
-.page_1 .title h1{font-size: 30px; font-weight: 700; text-align: left !important;    }
+.title{padding: 1cm 0 0.1cm;margin-bottom: .1cm; border-bottom: 3px solid #eaeaea; width:100%; }
+.title h1{font-size: 30px;  font-weight: 700; text-align: left !important;}
 
-#cke_cn101{margin-bottom: .6cm; font-size: 14px;}
+.title2{padding: 5px 20px 4px; margin: .6cm 0; background-color: #ccc; border-radius: 10px;}
+.title2 h2{font-size: 18px; font-weight: 500; text-align: left !important;    }
+
+.page_2 .page_2_title{text-align: left;}
+.wrap-sec h3{font-size:20px;}
+
+.subtitle_section1,
+.subtitle{margin-top:24px; }
+.page_3_subtitle,
+.subtitle h3{font-size:20px;}
+
+hr{margin-top:20px}
+
+.aside-txt{margin-bottom: .6cm; font-size: 12px; text-align: right;}
 
 .brick img{width:30px;}
-.wrap-sec{margin-bottom: 15px;}
+.wrap-sec{margin-bottom: 20px;}
+.wrap-group{padding:15px 0; font-size: 14px;}
 .table1{ width: 100%; ;}
 .table1 thead th{background-color: #ccc;}
-.ul_chart{display: inline-block;}
-
-
+.ul_chart{display: inline-flex; flex-wrap: nowrap; flex-direction: column; justify-content: flex-end;}
+.ul_chart li{position: relative;}
+.ul_chart li:nth-child(2){z-index: 10;}
+.ul_chart li:nth-child(3){margin-top:-10px;z-index:9;}
+.ul_chart li:nth-child(4){margin-top:-10px;z-index:8;}
+.ul_chart li:nth-child(5){margin-top:-10px;z-index:7;}
+.ul_chart li:nth-child(6){margin-top:-10px;z-index:6;}
 table {
   width: 100%;
   table-layout: fixed;
@@ -270,7 +288,7 @@ td {
   border-collapse: collapse;
 }
 .tbl-base {
-  margin: 5px 0 0 ;
+  margin: 0 0 ;
   width: 100%;
   position: relative;
   font-size: 14px;
@@ -279,32 +297,89 @@ td {
   width: 100%;
   border-top: 1px solid #222;;
 }
-
+/* .tbl-base.type-h2 table > tbody tr:nth-child(2) td, */
+.tbl-base.type-h2 table > thead tr:nth-child(2) th,
+.tbl-base.type-h2 table > tbody tr:nth-child(2) th{
+    background: rgb(241, 241, 241) !important;
+    font-weight: 600;
+}
+/* .tbl-base.type-h2 table > tbody tr:nth-child(1) td,
+.tbl-base.type-h1 table > tbody tr:nth-child(1) td, */
+.tbl-base.type-h1 table > tbody tr:nth-child(1) th,
+.tbl-base.type-h2 table > tbody tr:nth-child(1) th{
+    background: #e6e6e6 !important;
+    font-weight: 600;
+}
 .tbl-base table > thead th {
-  text-align: left;
+  text-align: center;
   padding: 4px 10px;
   font-weight: 700;
   color:#212121;
-  background: #e6e6e6;
-  border-bottom: 1px solid #dedede;;
+  background: #e8e8e8 !important;
+  border-right: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;;
+  font-size: 13px;
 }
 .tbl-base table > thead th:first-child {
   border-left: 0;
 }
-
+.tbl-base img{display: block;}
 .tbl-base table > tbody td, .tbl-base table > tbody th {
   padding: 4px 10px;
   font-weight: 300;
   word-break: break-all;
-  text-align: left;
+  text-align: center;
   background: #fff;
-  border-bottom: 1px solid #dedede;;
+  border-bottom: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+  line-height: 1.2;
+ 
 }
-.tbl-base table > tbody td:first-child, .tbl-base table > tbody th:first-child {
-  border-left: 0;
+.tbl-base table > tbody td:last-child, .tbl-base table > tbody th:last-child {
+  border-right: 0;
 }
 .tbl-base table > tbody th {
-  font-weight: 700;
-  background: rgb(241, 241, 241);
-  color: #212121;
+    padding: 6px 10px;
+    font-weight: 700;
+    background: rgb(241, 241, 241);
+    color: #212121;
+    text-align: center;
+    font-size: 13px;
 }
+.tbl-base h4{width:100%;margin-bottom:4px;}
+.tbl-line-no{border-bottom:0 !important}
+.tbl-base.type-img td{padding:10px !important; border: 1px solid #d1d1d1 !important;}
+.tbl-base.type-img th{border: 1px solid #d1d1d1 !important;}
+
+.ul_chart_wrap{display: flex; justify-content: space-around; padding:0 20px; margin-bottom: 8px;}
+.ul_chart{font-size: 11px;text-align: center; font-weight: 600;}
+
+.page_number_{position: absolute; width:100%; background-color: #f6f6f6; height: 30px; left:0; bottom:0;}
+.page_number_ > div{position: absolute; top:-15px; left:50%; width:30px; height:30px; border-radius: 50%; background-color: #fff; text-align: center; line-height: 28px; border:2px solid #ebebeb; color:#555; font-size:12px; margin-left:-15px;}
+
+.mt-x1{margin-top:8px !important;}
+.mt-x2{margin-top:calc(8px * 2) !important;}
+.mt-x3{margin-top:calc(8px * 3) !important;}
+.mt-x4{margin-top:calc(8px * 4) !important;}
+.mt-x5{margin-top:calc(8px * 5) !important;}
+.mt-x6{margin-top:calc(8px * 6) !important;}
+
+.text-box-title{font-size:16px !important; }
+h4{font-size: 16px; font-weight:700;}
+h5{font-size: 14px; font-weight:600;}
+.box{border:1px solid #ccc; padding: 10px 20px; border-radius: 6px; margin: 4px 0 0; background-color: #fafafa; font-size: 14px;
+}
+
+.cke_reset.cke_widget_drag_handler_container{width: 15px; height: 15px; position: absolute;}
+
+.bullet1 > li{text-indent: -20px; margin-left: 20px;}
+.bullet1 > li ul li{text-indent: -10px; margin-left: 10px;}
+
+p.caption,
+.caption{margin:5px 0; font-size: 12px; padding: 0;}
+p.caption,
+.caption li{text-indent: -10px; margin-left: 10px; font-weight: 600;}
+
+.ta-c img{display: inline-block;}
+.ta-c{text-align: center !important; width: 100%;}
+
